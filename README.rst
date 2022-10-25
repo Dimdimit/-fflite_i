@@ -1,9 +1,7 @@
-Template for the Read the Docs tutorial
-=======================================
+Быстрый старт
+============= 
 
-This GitHub template includes fictional Python library
-with some basic Sphinx docs.
+Руководство по развертыванию системы FindFace Lite (FF.Lite)
+============================================================
 
-Read the tutorial here:
-
-https://docs.readthedocs.io/en/stable/tutorial/
+В данном руководстве вы узнаете как быстро приступить к работе с FindFace Lite.
