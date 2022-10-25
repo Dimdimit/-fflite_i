@@ -2,15 +2,15 @@
 
 # -- Project information
 
-project = 'FF.Light_i'
-copyright = '2022, NTechLab'
+project = 'FindFace Lite Быстрый старт Руководство'
+copyright = '2022, NtechLab'
 author = 'DimDimit'
 
-release = '0.1'
+release = '1.2'
 version = '0.1.0'
 
 # -- General configuration
-
+language = 'ru'
 extensions = [
     'sphinx.ext.duration',
     'sphinx.ext.doctest',
@@ -30,6 +30,10 @@ templates_path = ['_templates']
 # -- Options for HTML output
 
 html_theme = 'sphinx_rtd_theme'
+html_show_sphinx = False
+html_favicon = '_static/index.ico'
 
 # -- Options for EPUB output
-epub_show_urls = 'footnote'
+epub_show_urls = 'inline'
+epub_tocdepth = 3
+epub_language = 'ru'
