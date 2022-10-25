@@ -2,7 +2,7 @@
 
 # -- Project information
 
-project = 'FindFace Lite Быстрый старт Руководство'
+project = 'Быстрый старт FindFace Lite Руководство'
 copyright = '2022, NtechLab'
 author = 'DimDimit'
 
