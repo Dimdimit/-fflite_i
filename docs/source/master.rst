@@ -3,7 +3,12 @@
 
 В данном руководстве вы узнаете как быстро приступить к работе с FindFace Lite.
 
-Master
+Содержание:   maxdepthmaster0
+
+ .. toctree::
+    
+    master
+
 
 О системе
 ---------
@@ -62,7 +67,8 @@ FindFace Lite устанавливается на операционную си�
 Детальное описание установки можно посмотреть в ``Приложении 1``.
 
 Compose должен вызываться через ``docker compose``.
- * Если вам нужно установить GPU версию, то тогда устанавливаем `NVIDIA Docker Runtime <https://docs.nvidia.com/datacenter/cloud-native/container-toolkit/install-guide.html>`_ и драйвера NVIDIA. Инструкция - `здесь <https://docs.nvidia.com/datacenter/cloud-native/container-toolkit/install-guide.html>`_.
+ * Если вам нужно установить GPU версию, то тогда устанавливаем `NVIDIA Docker Runtime <https://docs.nvidia.com/datacenter/cloud-native/container-toolkit/install-guide.html>`_ и драйвера NVIDIA.
+Инструкция - `здесь <https://docs.nvidia.com/datacenter/cloud-native/container-toolkit/install-guide.html>`_.
 
 Для версии CPU нет необходимости устанавливать дополнения NVIDIA.
 
@@ -310,5 +316,4 @@ Compose должен вызываться через ``docker compose``.
 .. |карандаш| image:: img/lt-00-01.jpg
 
 .. |корзина| image:: img/lt-00-02.jpg
-
 
