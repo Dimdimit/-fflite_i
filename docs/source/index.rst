@@ -3,24 +3,19 @@
 
 В данном руководстве вы узнаете как быстро приступить к работе с FindFace Lite.
 
-.. Содержание:
+Содержание:
 
  .. toctree::
     :maxdepth: -1
     :numbered:
     :titles_only:
     :caption: Table of Contents - Содержание
-    :name: index
     
     master
 
 О системе
 ---------
 
- .. toctree::
-    :maxdepth: -1
-    index
-    
 FindFace Lite – это облегченная версия основной многофункциональной системы видеоаналитики `Find Face Multi <https://docs.ntechlab.com/projects/ffmulti/>`_.
 
 Данная система распознает лица, детали предметов,силуэты, номера и прочие детали из видеопотока видеокамеры или видеозаписи.
