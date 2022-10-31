@@ -11,6 +11,8 @@
     :titles_only:
     :caption: Table of Contents - Содержание
     :name: index
+    
+    master
 
 О системе
 ---------
