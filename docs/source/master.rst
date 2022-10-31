@@ -5,7 +5,7 @@
 
 Содержание:   max
 
- .. toctree::
+.. toctree::
     :titlesonly:
     :glob:
 
