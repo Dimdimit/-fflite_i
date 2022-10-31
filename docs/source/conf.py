@@ -34,6 +34,7 @@ html_show_sphinx = False
 html_favicon = '_static/index.ico'
 
 # -- Options for EPUB output
-epub_show_urls = 'inline'
+epub_show_urls = 'footnote' 
+# epub_show_urls = 'inline'
 epub_tocdepth = 3
 epub_language = 'ru'
