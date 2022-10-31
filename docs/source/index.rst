@@ -7,10 +7,9 @@
 
  .. toctree::
     :maxdepth: 4
-:numbered:
-:hidden:
-
-    index.rst
+    :numbered:
+    
+    index
     
 
 О системе
