@@ -3,11 +3,11 @@
 
 В данном руководстве вы узнаете как быстро приступить к работе с FindFace Lite.
 
-Содержание:   max21
+Содержание:   max
 
 
  .. toctree::
-   :numbered:
+    :maxdepth: 3
 
     index
 
