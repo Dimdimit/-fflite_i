@@ -3,11 +3,13 @@
 
 В данном руководстве вы узнаете как быстро приступить к работе с FindFace Lite.
 
-Содержание:   maxdepthmaster0
+Содержание:   max
 
  .. toctree::
-    
-    master
+    :titlesonly:
+    :glob:
+
+    *
 
 
 О системе
