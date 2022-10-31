@@ -3,13 +3,9 @@
 
 В данном руководстве вы узнаете как быстро приступить к работе с FindFace Lite.
 
-Содержание:   max4
-
+Содержание:
 
  .. toctree::
-    :maxdepth: 4
-    :titles_only:
-    :caption: Table of Contents - Содержание
     
     index
 
