@@ -9,9 +9,8 @@
     :maxdepth: -1
     :numbered:
     :titles_only:
-    
-    index
-    
+    :caption: Table of Contents - Содержание
+    :name: index
 
 О системе
 ---------
