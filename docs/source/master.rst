@@ -5,11 +5,10 @@
 
 Содержание:   max
 
-.. toctree::
-    :titlesonly:
-    :glob:
 
-    *
+ .. toctree::
+
+    master
 
 
 О системе
