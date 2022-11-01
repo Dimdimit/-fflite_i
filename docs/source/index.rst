@@ -62,7 +62,7 @@ FindFace Lite устанавливается на операционную си�
 
 И так, у вас установлена Linux (Ubuntu), тогда приступаем:
 
-Шаг 1. Устанавливаем Docker версии не ниже 19.03 
+Шаг 1. Устанавливаем Docker версии 19.03 или выше
 
 `Инструкция разработчика <https://docs.docker.com/engine/install/#server>`_
 
@@ -73,17 +73,19 @@ FindFace Lite устанавливается на операционную си�
 * Ubuntu Focal 20.04 (LTS)
 * Ubuntu Bionic 18.04 (LTS)
 
-1) Удаляем ранее установленную версию Docker: сервисы``docker``, ``docker.io,`` или ``docker-engine`` должны быть удалены:
+1) Удаляем ранее установленную версию Docker: сервисы ``docker``, ``docker.io,`` или ``docker-engine`` должны быть удалены:
 
 ``sudo apt-get remove docker docker-engine docker.io containerd runc``.
 
-Все конфигурационные файлы, контейнеры и прочее, сохраненное в ``/var/lib/docker/`` автоматически не удаляются. Если вам нужна чистая установка Docker,  тогда удаляем пакеты ``Docker Engine``, ``CLI``, ``containerd``, ``Docker Compose`` и каталоги конфигураций
+.. note:
 
-``sudo apt-get purge docker-ce docker-ce-cli containerd.io docker-compose-plugin``
+  Все конфигурационные файлы, контейнеры и прочее, сохраненное в ``/var/lib/docker/`` автоматически не удаляются. Если вам нужна чистая установка Docker,  тогда удаляем пакеты ``Docker Engine``, ``CLI``, ``containerd``, ``Docker Compose`` и каталоги конфигураций
 
-``sudo rm -rf /var/lib/docker``
-
-``sudo rm -rf /var/lib/containerd``
+.. code-block::
+     
+  sudo apt-get purge docker-ce docker-ce-cli containerd.io docker-compose-plugin
+  sudo rm -rf /var/lib/docker
+  sudo rm -rf /var/lib/containerd
 
 
 Вам нужно удалить каждый отредактированный файл самостоятельно.
@@ -96,54 +98,42 @@ FindFace Lite устанавливается на операционную си�
 .. note::
 
    Docker можно установить несколькими способами в зависимости от ваших потребностей.
-
-   Docker уже может быть предустановлен в системе `Docker Desktop for Linux
-<https://docs.docker.com/desktop/install/linux-install/>`_
+   Docker уже может быть предустановлен в системе `Docker Desktop for Linux <https://docs.docker.com/desktop/install/linux-install/>`_
    Так же Docker можно установить в ручную и управлять его обновлениями самостоятельно.
-
-Здесь мы опишем автоматическую установку и обновление из apt-репозитория. 
+   
+   Здесь мы опишем автоматическую установку и обновление из apt-репозитория. 
 
 
 2.1) Обновляем индексацию apt-пакетов и устанавливаем пакеты, позволяющие использовать  пакеты apt через HTTPS:
 
-.. code-block:: ruby
-  
-  sudo apt-get update
-  sudo apt-get install \
-    ca-certificates \
-    curl \
-    gnupg \
-    lsb-release
-
-
-—-
-
 .. code-block:: 
   
-  not ruby
   sudo apt-get update
   sudo apt-get install \
     ca-certificates \
     curl \
     gnupg \
     lsb-release
+
 
 2.2) Добавляем официальный GPG-ключ для Docker’a:
 
-.. code-block:: ruby
-sudo mkdir -p /etc/apt/keyrings
-curl -fsSL https://download.docker.com/linux/ubuntu/gpg | sudo gpg --dearmor -o /etc/apt/keyrings/docker.gpg
+.. code-block::
+
+  sudo mkdir -p /etc/apt/keyrings
+  curl -fsSL https://download.docker.com/linux/ubuntu/gpg | sudo gpg --dearmor -o /etc/apt/keyrings/docker.gpg
 
 
 2.3) Используем следующую команду для установки репозитория:
 
-.. code-block:: ruby
-echo \
+.. code-block::
+     
+  echo \
   "deb [arch=$(dpkg --print-architecture) signed-by=/etc/apt/keyrings/docker.gpg] https://download.docker.com/linux/ubuntu \
   $(lsb_release -cs) stable" | sudo tee /etc/apt/sources.list.d/docker.list > /dev/null
 
 
-2,4) Устанавливаем Docker Engine
+2.4) Устанавливаем Docker Engine
 
     
 
@@ -407,5 +397,4 @@ Compose должен вызываться через ``docker compose``.
 .. |карандаш| image:: img/lt-00-01.jpg
 
 .. |корзина| image:: img/lt-00-02.jpg
-
 
