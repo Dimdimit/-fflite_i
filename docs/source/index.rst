@@ -62,12 +62,10 @@ FindFace Lite устанавливается на операционную си�
 
 И так, у вас установлена Linux (Ubuntu), тогда приступаем:
 
-Шаг 1. Устанавливаем Docker
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+Устанавливаем Docker
+~~~~~~~~~~~~~~~~~~~
 
-`Инструкция разработчика <https://docs.docker.com/engine/install/#server>`_
-
-Для FFLite необходимо установить Docker  версии 19.03 или выше.
+Для FF.Lite необходимо установить Docker  версии 19.03 или выше.
 
 Для установки Docker требуется версия Ubuntu не ниже приведенных далее:
 
@@ -75,6 +73,8 @@ FindFace Lite устанавливается на операционную си�
 * Ubuntu Impish 21.10
 * Ubuntu Focal 20.04 (LTS)
 * Ubuntu Bionic 18.04 (LTS)
+
+Вы можете воспользоваться предложенной ниже инструкцией для установки Docker’a либо изучить инструкцию на сайте разработчика Docker: `Инструкция разработчика <https://docs.docker.com/engine/install/#server>`_
 
 
 Удаляем ранее установленную версию Docker
@@ -84,7 +84,7 @@ FindFace Lite устанавливается на операционную си�
 
 .. code-block::
 
-  sudo apt-get remove docker docker-engine docker.io containerd runc
+  $ sudo apt-get remove docker docker-engine docker.io containerd runc
 
 
 .. note::
@@ -93,9 +93,9 @@ FindFace Lite устанавливается на операционную си�
 
 .. code-block::
      
-  sudo apt-get purge docker-ce docker-ce-cli containerd.io docker-compose-plugin
-  sudo rm -rf /var/lib/docker
-  sudo rm -rf /var/lib/containerd
+  $ sudo apt-get purge docker-ce docker-ce-cli containerd.io docker-compose-plugin
+  $ sudo rm -rf /var/lib/docker
+  $ sudo rm -rf /var/lib/containerd
 
 
 Вам нужно удалить каждый отредактированный файл самостоятельно.
@@ -121,8 +121,8 @@ FindFace Lite устанавливается на операционную си�
 
 .. code-block:: 
   
-  sudo apt-get update
-  sudo apt-get install \
+  $ sudo apt-get update
+  $ sudo apt-get install \
     ca-certificates \
     curl \
     gnupg \
@@ -134,8 +134,8 @@ FindFace Lite устанавливается на операционную си�
 
 .. code-block::
 
-  sudo mkdir -p /etc/apt/keyrings
-  curl -fsSL https://download.docker.com/linux/ubuntu/gpg | sudo gpg --dearmor -o /etc/apt/keyrings/docker.gpg
+  $ sudo mkdir -p /etc/apt/keyrings
+  $ curl -fsSL https://download.docker.com/linux/ubuntu/gpg | sudo gpg --dearmor -o /etc/apt/keyrings/docker.gpg
 
 
 Используем следующую команду для установки репозитория:
@@ -143,7 +143,7 @@ FindFace Lite устанавливается на операционную си�
 
 .. code-block::
      
-  echo \
+ $ echo \
   "deb [arch=$(dpkg --print-architecture) signed-by=/etc/apt/keyrings/docker.gpg] https://download.docker.com/linux/ubuntu \
   $(lsb_release -cs) stable" | sudo tee /etc/apt/sources.list.d/docker.list > /dev/null
 
@@ -153,8 +153,8 @@ FindFace Lite устанавливается на операционную си�
 
 .. code-block::    
   
-  sudo apt-get update
-  sudo apt-get install docker-ce docker-ce-cli containerd.io docker-compose-plugin
+  $ sudo apt-get update
+  $ sudo apt-get install docker-ce docker-ce-cli containerd.io docker-compose-plugin
 
 
 Проверяем работу Docker’a
@@ -162,27 +162,61 @@ FindFace Lite устанавливается на операционную си�
 
 .. code-block::    
   
-  sudo docker run hello-world
+  $ sudo docker run hello-world
 
-Эта команда загружает тестовый контейнер, выводит сообщение и завершает работу.
+Эта команда загружает тестовый контейнер, выводит сообщение  ``hello-world`` и завершает работу.
+
+Если у вас возникли вопросы по установке Docker’a вы можете обратиться к инструкции на `сайте разработчика <https://docs.docker.com/engine/install/#server>`_.
 
 
-
-Шаг 2. Устанавливаем Compose
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-
-`Инструкция разработчика  <https://docs.docker.com/compose/install/linux/>`_
+Устанавливаем Compose plugin
+~~~~~~~~~~~~~~~~~~~~
 
 Для FF.Lite необходимо установить Compose версии  не ниже 2.2.3.
 
+Для установки плагина Compose у вас должен быть установлен Docker.
+
+Устанавливаем плагин из apt-репозитория:
+""""""""""""""""""""""""""""""""""
+
+.. code-block::    
+
+  $ sudo apt-get update
+  $ sudo apt-get install docker-compose-plugin
+
+
+Проверяем работу Compose
+""""""""""""""""""""""""""""""""""
+
+.. code-block::    
+
+  $ docker compose version
+
+
+При успешной установке данная команда выведет сообщение
+
+``Docker Compose version vN.N.N``
+
+
 Compose должен вызываться через ``docker compose``.
+
+
+Если у вас возникли вопросы по установке Compose вы можете обратиться к инструкции на `сайте разработчика  <https://docs.docker.com/compose/install/linux/>`_
+
+
+
+Установка GPU-версии
+----------------------
+
  * Если вам нужно установить GPU версию, то тогда устанавливаем `NVIDIA Docker Runtime <https://docs.nvidia.com/datacenter/cloud-native/container-toolkit/install-guide.html>`_ и драйвера NVIDIA. Инструкция - `здесь <https://docs.nvidia.com/datacenter/cloud-native/container-toolkit/install-guide.html>`_.
 
 Для версии CPU нет необходимости устанавливать дополнения NVIDIA.
 
 
+
 Обновление
 ----------------------
+
 Если у вас уже была установлена FF.Lite, то устанавливать Docker и Compose нет необходимости.
 Достаточно их просто обновить.
 
@@ -218,7 +252,7 @@ Compose должен вызываться через ``docker compose``.
 
 3. Запускаем данный пакет из командной строки предпочтительно через ``sudo``.
 
-``sudo ./fflite-cpu*.run``
+``$ sudo ./fflite-cpu*.run``
 
 Далее следуем инструкциям инсталлятора.
 
