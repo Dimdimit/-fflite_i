@@ -29,17 +29,9 @@ templates_path = ['_templates']
 
 # -- Options for HTML output
 
-html_theme = 'sphinx_rtd_theme'
+html_theme = 'piccolo_theme'
 html_show_sphinx = False
 html_favicon = '_static/index.ico'
-
-html_sidebars = { '**': [
-    'localtoc.html',
-    'ethicalads.html',  # Put the ad below the navigation but above previous/next
-    'relations.html',
-    'sourcelink.html',
-    'searchbox.html',
-] }
 
 # -- Options for EPUB output
 epub_show_urls = 'footnote' 
